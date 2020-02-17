@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Personal Portfolio</title>
+	<script src="https://kit.fontawesome.com/938fe9b66d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<style>
+		
+		html{
+			scroll-behavior: smooth;
+		}
+
+		body{
+
+			margin:0 auto;
+		}
+
+		/* Start of Navigation Bar */
+
+		#navbar{
+			position: fixed;
+		}
+
+		nav ul{
+			list-style-type: none;
+			margin: 0 auto;
+			padding: 0px 0px 0px 0px;
+			overflow: hidden;
+			background-color: #9b111e;
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
+
+		nav li{
+			font-family: sans-serif;
+			font-size: 25px;
+			float: right;
+			text-align: center;
+			padding: 0px 8px 0px 0px;
+
+		}
+
+		nav li a{
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 15px 15px 15px 15px;
+			text-decoration: none;
+		}
+
+		nav li a:hover:not(.active){
+			background-color: #003366;
+		}
+
+		.active{
+			background-color: white;
+		}
+
+		@media(max-width: 420px){
+			nav  li{
+				font-size:20px;
+			}
+
+		}
+
+		/*End of Navigation Bar*/
+
+
+
+		/*Start of welcome section*/
+
+		.welcome-section{
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100vh;
+			background-color: #000;
+			background: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+		}
+
+		.welcome-section h1{
+			font-family: serif;
+			font-size: 60px;
+			color: white;
+			padding: 0px 0px 0px 0px;
+			margin-bottom: 0px;
+		}
+
+		.welcome-section p{
+			font-family: sans-serif;
+			font-size: 25px;
+			color: red;
+			font-style: italic;
+			padding: 0px 0px 0px 0px;
+			
+
+		}
+
+		@media(max-width: 420px){
+			.welcome-section h1{
+				font-size: 40px;
+				text-align: center;
+			}
+
+			.welcome-section p{
+				font-size: 15px;
+				text-align: center;
+			}
+		}
+
+		/*End of welcome section*/
+
+
+
+		/*Start of project section*/
+
+		.project-section{
+			text-align: center;
+			padding: 10px 0px 10px 0px;
+			background-color: #003153;
+		}
+
+		.project-section-header{
+			margin: 0 auto;
+			font-family: sans-serif;
+			font-size: 45px;
+			color: white;
+			margin-bottom: 15px;
+			
+			padding: 55px 0px 55px 0px;
+
+		}
+
+		@media(max-width: 420px){
+			.project-section-header{
+				font-size: 25px;
+				margin-bottom: 7.5px;
+			}
+		}
+
+		.project-grid{
+
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			grid-gap: 40px;
+			width: 100%;
+			max-width: 1200px;
+			margin: 0 auto;
+			margin-bottom: 6rem;
+			padding: 10px 0px 0px 0px;
+			overflow: hidden;
+		}
+
+		@media(max-width: 420px){
+			.project-grid{
+				max-width:300px;
+				margin: 0 auto;
+			}
+		}
+
+		.project{
+			background-color: white;
+			transition: 1s;
+			border-radius:10px;
+		}
+
+		.project-image{
+
+			width: 100%;
+			object-fit: cover;
+			border-radius: 10px;
+		}
+
+
+		.project-title{
+			font-size: 32px;
+			padding: 15px 8px;
+			border-bottom: 2px solid white;
+			text-decoration: none;
+		}
+
+		@media(max-width: 420px){
+			.project-title{
+				font-size: 20px;
+			}
+		}
+
+
+		.code{
+			color: white;
+			transition: color 0.3s ease-out;
+		}
+
+		.project:hover{
+			transform: scale(0.8);
+		}
+
+		.project:hover .code{
+			color: red;
+		}
+
+		.transit{
+			transition: color 0.3s ease-out;
+			color: white;
+		}
+
+
+		.button{
+			display: inline-block;
+			padding: 20px 20px 20px 20px;
+			font-family: sans-serif;
+			font-size: 23px;
+			background-color: #000133;
+			text-decoration: none;
+			color: white;
+			border-radius: 5px;
+		}
+
+		@media(max-width: 420px){
+			.button{
+				font-size: 14px;
+				margin-top: 10px;
+			}
+		}
+
+		.button:hover{
+			background-color: #9b111e;
+			color: white;
+		}
+
+		.button:hover .transit{
+			color: red;
+		}
+
+
+
+		/*End of project section*/
+
+
+
+		/*Start of contact section*/
+
+		.contact-section{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			width: 100%;
+			height: 100vh;
+			padding: 10px 0px 10px 0px;
+			background-color: #000;
+			background: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+		}
+
+		.contact-section-header{
+
+			font-family: sans-serif;
+			font-size: 45px;
+			color: white;
+		}
+
+		.contact-section p{
+			font-family: sans-serif;
+			font-size: 25px;
+			font-weight: thin;
+			color: red;
+			font-style: italic;
+			padding: 0px 0px 20px 0px;
+		}
+
+		@media(max-width: 420px){
+			.contact-section-header{
+				font-size: 25px;
+				text-align: center;
+			}
+
+			.contact-section p{
+				font-size: 15px;
+				text-align: center;
+			}
+		}
+
+		.contact-links{
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			text-decoration: none;
+			flex-wrap: wrap;
+			max-width: 980px;
+			margin-top: 4rem;
+			padding: 10px;
+
+			
+		}
+
+		.button-link{
+			text-decoration: none;
+			padding: 20px 20px 0px 0px;
+			font-family: sans-serif;
+			font-size: 30px;
+			color: white;
+			border-radius: 2px;
+			transition: 1s;
+		}
+
+		@media(max-width: 420px){
+			.button-link{
+				font-size: 15px;
+				position: relative;
+				padding: 15px 15px 25px 15px;
+
+			}
+		}
+
+		.button-link:hover{
+
+			color: orange;
+			transform: scale(0.9);
+		}
+
+
+
+		
+
+		/*End of contact section*/
+
+
+		/*Start of Footer*/
+
+		footer{
+			display: flex;
+			color: white;
+			font-family: sans-serif;
+			justify-content: space-around;
+			background-color: #000;
+			background: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+			border-top: 2px solid red;
+		}
+		/*End of Footer*/
+
+		
+		
+
+
+
+
+
+
+	</style>
+
+	<nav id="navbar">
+		<ul>
+			<li><a href="#contact-section">Contact</a></li>
+			<li><a href="#projects">Work</a></li>
+			<li><a href="#welcome-section">About</a></li>
+			
+			
+		</ul>
+		
+	</nav>
+
+
+	<section id="welcome-section" class="welcome-section">
+		<h1>Hey I am Harshad</h1>
+		<p>a web developer</p>
+	</section>
+
+	<section id="projects" class="project-section">
+		<h2 class="project-section-header">These are some of my projects</h2>
+
+		<div class="project-grid">
+			<a href="https://codepen.io/96_flash/full/OJPmVyW" target="_blank" class=" project project-tile">
+				
+				<img src="http://getwallpapers.com/wallpaper/full/7/b/e/1103466-widescreen-steve-jobs-wallpaper-1920x1108-for-ipad-2.jpg"  class="project-image" alt="SteveJobs">
+				<p class="project-title">
+					<span class="code">&lt;</span>Tribute Page<span class="code">&#47;&gt;</span>
+				</p>
+			</a>
+
+			<a href="https://codepen.io/96_flash/full/dyPRVyL" target="_blank" class=" project project-tile">
+				
+				<img src="https://ak1.picdn.net/shutterstock/videos/1005621661/thumb/1.jpg"  class="project-image" alt="ClimateChange">
+				<p class="project-title">
+					<span class="code">&lt;</span>Survey Form<span class="code">&#47;&gt;</span>
+				</p>
+			</a>
+
+			<a href="https://codepen.io/96_flash/full/rNaRYYw" target="_blank" class=" project project-tile">
+				
+				<img src="https://user-images.githubusercontent.com/47576444/56372699-66249280-61f7-11e9-9e2a-ec5f4604e191.JPG" height="210" class="project-image" alt="DocumentationPage">
+				<p class="project-title">
+					<span class="code">&lt;</span>Technical Page<span class="code">&#47;&gt;</span>
+				</p>
+			</a>
+		</div>
+
+		<a href="https://codepen.io/dashboard/" class="button" id="profile-link" target="_blank">
+			<span class="transit">&lt;</span>
+			Show all 
+			<span class="transit">&gt;</span></a>
+		</section>
+
+		<section id="contact-section" class="contact-section">
+			<h2 class="contact-section-header">Let's work together...</h2>
+			<p>where should we catch up</p>
+
+			<div id="contact-links">
+				<a href="https://www.facebook.com/" target="_blank" class="button-link"><i class="fab fa-facebook-square fa-2x"></i> Facebook</a>
+				<a href="https://twitter.com/" target="_blank" class="button-link"><i class="fab fa-twitter-square fa-2x"></i> Twitter</a>
+				<a href="https://www.instagram.com/" target="_blank" class="button-link"><i class="fab fa-instagram fa-2x"></i> Instagram</a>
+				<a href="https://www.google.com/intl/en-GB/gmail/about/#" target="_blank" class="button-link"><i class="fas fa-at fa-2x"></i>  E-mail</a>
+			</div>
+		</section>
+
+		<footer>
+			<p>&copy; Created by Harshad Naik</p>
+		</footer>
+
+	</body>
+	</html>
